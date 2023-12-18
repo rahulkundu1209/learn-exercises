@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, NavLink, useLocation} from "react-router-dom";
+import { NavLink, useLocation} from "react-router-dom";
 import {Stack} from "@mui/material";
 
 import Logo from "../assets/images/Logo.png";
@@ -19,6 +19,7 @@ const NavBar = () => {
       <NavLink to={"/"}>
         <img 
         src={Logo} 
+        alt="logo"
         style={{width: "48px", height: "48px", margin: "0px 20px"}} />
       </NavLink>
       <Stack

@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import topArrow from "../assets/images/up-arrow.png"
 
@@ -27,7 +27,7 @@ const NavigateTop = () => {
       display={isVisible ? "flex" : "none"}
       onClick={navigateTopHandler}
     >
-      <img src={topArrow} height="20px" width="20px" />
+      <img src={topArrow} alt='arrow' height="20px" width="20px" />
     </Box>
   )
 }

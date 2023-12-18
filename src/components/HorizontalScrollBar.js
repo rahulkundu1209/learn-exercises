@@ -1,8 +1,7 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { Box, Button, Stack, TabScrollButton, Typography } from "@mui/material";
+import React from 'react';
+import { Box } from "@mui/material";
 import BodyPart from './BodyPart';
 import ExerciseCard from './ExerciseCard';
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 
 const HorizontalScrollBar = ({data, bodyPart, setBodyPart, exercises}) => {
 

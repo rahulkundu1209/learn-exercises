@@ -6,7 +6,7 @@ import equipmentImage from "../assets/icons/equipment.png";
 import targetImage from "../assets/icons/target.png";
 
 const Detail = ({exerciseDetail}) => {
-  const { bodyPart, equipment, gifUrl, instructions, name, secondaryMuscles, target } = exerciseDetail;
+  const { bodyPart, equipment, gifUrl, instructions, name, target } = exerciseDetail;
 
   const extraDeail = [
     {
@@ -49,7 +49,7 @@ const Detail = ({exerciseDetail}) => {
             <Button
               sx={{ background: "#fff2db", borderRadius: "50%", height: "60px", width: "60px" }}
             >
-              <img src={item.icon} height="25px" width="25px"  />
+              <img src={item.icon} alt="icon" height="25px" width="25px"  />
             </Button>
             <Typography variant='h6' textTransform="capitalize" >
               {item.name}
