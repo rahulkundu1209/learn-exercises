@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Stack, Typography } from "@mui/material";
 
 import bodyPartImage from "../assets/icons/body-part.png";
 import equipmentImage from "../assets/icons/equipment.png";
 import targetImage from "../assets/icons/target.png";
+import Bookmark from './Bookmark';
+import { useParams } from 'react-router-dom';
+import useBookmark from '../hooks/use-bookmark';
 
 const Detail = ({exerciseDetail}) => {
   const { bodyPart, equipment, gifUrl, instructions, name, target } = exerciseDetail;
+  const {id} = useParams();
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const { getBookmarks, isLoading, setChanged } = useBookmark();
+
+  useEffect(()=>{
+    const applyBookmarks = (bookmarks) =>{
+      setIsBookmarked(bookmarks.indexOf(id) !== -1 ? true : false);
+      console.log("isBookmarked ", isBookmarked);
+    }
+    getBookmarks(applyBookmarks);
+  }, [setChanged]);
 
   const extraDeail = [
     {
@@ -38,9 +52,14 @@ const Detail = ({exerciseDetail}) => {
           gap: {lg: "35px", xs: "20px"}
         }}
       >
-        <Typography variant="h3">
-          {name}
-        </Typography>
+        <Stack
+          direction="row"
+        >
+          <Typography variant="h3">
+            {name}
+          </Typography>
+          <Bookmark exerciseId={id} isBookmarked={isBookmarked} setIsBookmarked={setIsBookmarked} />
+        </Stack>
         <Typography variant="h6">
           Exercises keep you strong. {name} {" "} is one of the best exercises to target your {target}. It will help you to improve your mood and gain energy.
         </Typography>

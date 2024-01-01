@@ -16,4 +16,10 @@ const Loader = ({height}) => {
   )
 }
 
-export default Loader
+export const RingLoader = () =>{
+  return(
+    <div className='loader'></div>
+  )
+}
+
+export default Loader;
