@@ -8,7 +8,7 @@ const HeroBanner = () => {
     <Box
       sx={{
         mt: { lg: "212px", xs: "70px" },
-        ml: { sm: "50px" }
+        ml: { sm: "50px", xs: "10px" }
       }}
     >
       <Typography
